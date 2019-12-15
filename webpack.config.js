@@ -1,7 +1,9 @@
 module.exports = {
-  // 写你的配置
-  mode: 'production',
-  entry: './xxx.js',
+  mode: 'development',
+  entry: [
+    './xxx.js',
+    './yyy.js'
+  ],
   output: {
     'filename': './[name].js'
   }
