@@ -1,10 +1,10 @@
 module.exports = {
   mode: 'development',
-  entry: [
-    './xxx.js',
-    './yyy.js'
-  ],
+  entry: {
+    'xxx': './xxx.js',
+    'yyy': './yyy.js'
+  },
   output: {
-    'filename': './[name].js'
+    'filename': './[name].[hash].js'
   }
 }
