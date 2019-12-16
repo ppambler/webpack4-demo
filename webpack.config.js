@@ -2,7 +2,7 @@ module.exports = {
   mode: 'development',
   entry: {
     'xxx': './xxx.js',
-    'yyy': './yyy.js'
+    'yyy': ['./yyy.js', '@babel/polyfill']
   },
   output: {
     'filename': './[name].js'
@@ -19,7 +19,7 @@ module.exports = {
                 '@babel/preset-env',
                 {
                   targets: {
-                    node: '10.15.3'
+                    browsers: ["> 1%", "last 2 versions", "not ie <= 8"]
                   }
                 }
               ]
