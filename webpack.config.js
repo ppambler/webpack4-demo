@@ -18,6 +18,20 @@ module.exports = {
       {
         test: /\.tsx?$/,
         loader: 'ts-loader'
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: 'style-loader',
+            // options: {
+            //   'insert': 'body'
+            // }
+          },
+          {
+            loader: 'css-loader'
+          }
+        ]
       }
     ]
   },
