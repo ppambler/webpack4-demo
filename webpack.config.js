@@ -2,7 +2,7 @@ module.exports = {
   mode: 'development',
   entry: {
     'xxx': './xxx.js',
-    'yyy': ['./yyy.js', '@babel/polyfill']
+    'yyy': './yyy.js'
   },
   output: {
     'filename': './[name].js'
@@ -23,6 +23,9 @@ module.exports = {
                   }
                 }
               ]
+            ],
+            plugins: [
+              ['@babel/transform-runtime']
             ]
           }
         }
