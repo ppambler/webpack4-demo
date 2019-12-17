@@ -14,6 +14,10 @@ module.exports = {
         use: {
           loader: 'babel-loader'
         }
+      },
+      {
+        test: /\.tsx?$/,
+        loader: 'ts-loader'
       }
     ]
   },

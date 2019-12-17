@@ -1,3 +1,4 @@
+import './test.ts'
 console.log('xxx')
 
 var arr = Array.from('foo');
