@@ -20,6 +20,12 @@ body {
   composes: inh-xxx from "./zzz.css";
 
   display: flex;
+
+  background-color: var(--mainColor);
+}
+
+:root {
+  --mainColor: yellowgreen;
 }
 
 .xxx .yyy>h1 {

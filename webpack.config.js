@@ -38,7 +38,8 @@ module.exports = {
             options: {
               ident: 'postcss',
               plugins: [
-                require('autoprefixer')() 
+                require('autoprefixer')(),
+                require('postcss-cssnext')()
               ]
             }
           }
