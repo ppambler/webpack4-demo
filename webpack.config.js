@@ -1,4 +1,6 @@
 const extracss = require('extract-text-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 module.exports = {
   mode: 'development',
   entry: {
@@ -22,35 +24,34 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: extracss.extract({
-          fallback: "style-loader",
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                modules: {
-                  localIdentName: '[path]_[name]_[local]_[hash]'
-                }
-              }
-            },
-            {
-              loader: 'postcss-loader',
-              options: {
-                ident: 'postcss',
-                plugins: [
-                  require('autoprefixer')(),
-                  require('postcss-cssnext')()
-                ]
-              }
+        use: [{
+          loader: MiniCssExtractPlugin.loader
+        },
+        {
+          loader: 'css-loader',
+          options: {
+            modules: {
+              localIdentName: '[path]_[name]_[local]_[hash]'
             }
-          ]
-        }),
+          }
+        },
+        {
+          loader: 'postcss-loader',
+          options: {
+            ident: 'postcss',
+            plugins: [
+              require('autoprefixer')(),
+              require('postcss-cssnext')()
+            ]
+          }
+        }
+        ]
       }
     ]
   },
   plugins: [
-    new extracss({
-      filename: '[name].mini.css'
+    new MiniCssExtractPlugin({
+      filename: '[name].min.css'
     })
   ]
 }
