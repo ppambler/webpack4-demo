@@ -17,10 +17,19 @@ body {
 :local .locZzz {
   color: palegreen;
   /* composes：组成、构成 */
-
   composes: inh-xxx from "./zzz.css";
+
+  display: flex;
 }
 
-.xxx .yyy > h1 {
+.xxx .yyy>h1 {
   color: yellow;
+}
+
+#ooo {
+  font-size: 80px;
+}
+
+.ooo {
+  font-size: 60px;
 }

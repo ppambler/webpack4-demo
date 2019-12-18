@@ -28,7 +28,18 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              modules: true
+              modules: {
+                localIdentName: '[path]_[name]_[local]_[hash]'
+              }
+            }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              ident: 'postcss',
+              plugins: [
+                require('autoprefixer')() 
+              ]
             }
           }
         ]
