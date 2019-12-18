@@ -1,0 +1,9 @@
+/* 用于测试继承的样式 */
+
+.inh-xxx {
+  font-size: 60px;
+}
+
+.glo-ha {
+  font-size: 100px;
+}

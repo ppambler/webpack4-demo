@@ -1,3 +1,26 @@
 body {
   background-color: red;
 }
+
+/* 以下是测试如何用模块化的方式来写CSS */
+
+/* :global定义glo-xxx这个类是一个全局的类 ,即可以让你在任何地方都能拿到这个类*/
+
+:global .glo-xxx {
+  color: yellow;
+  /* 继承或者说是组合，只能用在局部类 */
+  /* composes: glo-ha from './zzz.css'; */
+}
+
+/* 与之相对的还有一个本地的样式，即:local 表示loc-zzz这个类只能在这个文件里边拿到 */
+
+:local .locZzz {
+  color: palegreen;
+  /* composes：组成、构成 */
+
+  composes: inh-xxx from "./zzz.css";
+}
+
+.xxx .yyy > h1 {
+  color: yellow;
+}

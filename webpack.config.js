@@ -24,12 +24,12 @@ module.exports = {
         use: [
           {
             loader: 'style-loader',
-            // options: {
-            //   'insert': 'body'
-            // }
           },
           {
-            loader: 'css-loader'
+            loader: 'css-loader',
+            options: {
+              modules: true
+            }
           }
         ]
       }
