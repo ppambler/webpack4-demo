@@ -1,5 +1,7 @@
 const extracss = require('extract-text-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
 
 module.exports = {
   mode: 'development',
@@ -52,6 +54,17 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin({
       filename: '[name].min.css'
+    }),
+    new HtmlWebpackPlugin({
+      template: 'index.html',
+      filename: 'index.html',
+      chunks: ['xxx']
+    }),
+    new HtmlWebpackPlugin({
+      template: 'index.html',
+      filename: 'index2.html',
+      chunks: ['yyy']
     })
   ]
 }
+
