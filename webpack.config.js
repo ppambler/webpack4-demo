@@ -54,11 +54,12 @@ module.exports = {
         test: /\.(png|jpe?g|gif)$/i,
         use: [
           {
-            loader: 'file-loader',
+            loader: 'url-loader',
             options: {
               name: '[name].[hash:4].[ext]',
               outputPath: 'assets/img',
-              publicPath: 'assets/img'
+              publicPath: 'assets/img',
+              limit: 60000
             }
           },
         ],
