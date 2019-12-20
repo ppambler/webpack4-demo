@@ -39,3 +39,13 @@ body {
 .ooo {
   font-size: 60px;
 }
+
+.img1 {
+  background-image: url("../img/img1.jpg");
+}
+.img2 {
+  background-image: url("../img/img2.jpg");
+}
+.img3 {
+  background-image: url("../img/img3.png");
+}

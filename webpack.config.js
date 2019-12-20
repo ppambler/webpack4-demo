@@ -10,7 +10,8 @@ module.exports = {
     'yyy': './yyy.js'
   },
   output: {
-    'filename': './[name].js'
+    'filename': './[name].js',
+    'publicPath': 'adadadaa'
   },
   module: {
     rules: [
@@ -48,6 +49,19 @@ module.exports = {
           }
         }
         ]
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[hash:4].[ext]',
+              outputPath: 'assets/img',
+              publicPath: 'assets/img'
+            }
+          },
+        ],
       }
     ]
   },
