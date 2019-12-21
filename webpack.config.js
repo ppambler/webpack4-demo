@@ -59,7 +59,7 @@ module.exports = {
               name: '[name].[hash:4].[ext]',
               outputPath: 'assets/img',
               publicPath: 'assets/img',
-              limit: 8192
+              limit: 5000
             }
           },
           {
@@ -68,7 +68,14 @@ module.exports = {
               plugins: [
                 require('imagemin-pngquant')({
                   speed: 2
-                })
+                }),
+                require('imagemin-mozjpeg')({
+                  quality: 50 //1-100，1是压缩到最狠的
+                }),
+                require('imagemin-gifsicle')({
+                  optimizationLevel: 3 //1、2、3，3是最狠的！ 
+                }),
+
               ]
             }
           }
