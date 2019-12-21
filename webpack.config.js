@@ -59,9 +59,19 @@ module.exports = {
               name: '[name].[hash:4].[ext]',
               outputPath: 'assets/img',
               publicPath: 'assets/img',
-              limit: 60000
+              limit: 8192
             }
           },
+          {
+            loader: 'img-loader',
+            options: {
+              plugins: [
+                require('imagemin-pngquant')({
+                  speed: 2
+                })
+              ]
+            }
+          }
         ],
       }
     ]
