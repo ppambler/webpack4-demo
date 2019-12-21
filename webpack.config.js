@@ -2,6 +2,9 @@ const extracss = require('extract-text-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
+var path = require('path');
+
+var SpritesmithPlugin = require('webpack-spritesmith');
 
 module.exports = {
   mode: 'development',
@@ -56,7 +59,7 @@ module.exports = {
             plugins: [
               require('autoprefixer')(),
               require('postcss-cssnext')(),
-              require('postcss-sprites')()
+              // require('postcss-sprites')()
             ]
           }
         }
@@ -108,6 +111,22 @@ module.exports = {
       template: 'index.html',
       filename: 'index2.html',
       chunks: ['yyy']
+    }),
+    new SpritesmithPlugin({
+      src: {
+        // 图片来源文件夹
+        cwd: path.join(__dirname, './img'),
+        // 处理什么图片
+        glob: '*.*'
+      },
+      target: {
+        // 打包到哪儿
+        image: path.join(__dirname, 'dist/sprites/sprite.png'),
+        css: path.join(__dirname, 'dist/sprites/sprite.css')
+      },
+      apiOptions: {
+        cssImageRef: "./sprites/sprite.png"
+      }
     })
   ]
 }
