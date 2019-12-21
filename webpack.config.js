@@ -11,7 +11,6 @@ module.exports = {
   },
   output: {
     'filename': './[name].js',
-    'publicPath': 'adadadaa'
   },
   module: {
     rules: [
@@ -24,6 +23,18 @@ module.exports = {
       {
         test: /\.tsx?$/,
         loader: 'ts-loader'
+      },
+      {
+        test: /\.html$/,
+        use:{
+          loader: 'html-loader',
+          options: {
+            attrs: [
+              'img:data-src',
+              "video:src"
+            ]
+          }
+        }
       },
       {
         test: /\.css$/,
