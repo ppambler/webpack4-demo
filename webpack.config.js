@@ -6,6 +6,7 @@ var path = require('path');
 
 var SpritesmithPlugin = require('webpack-spritesmith');
 
+
 module.exports = {
   mode: 'development',
   entry: {
@@ -40,7 +41,7 @@ module.exports = {
         }
       },
       {
-        test: /\.css$/,
+        test: /\.(sa|sc|c)ss$/,
         use: [{
           loader: MiniCssExtractPlugin.loader
         },
@@ -61,6 +62,15 @@ module.exports = {
               require('postcss-cssnext')(),
               // require('postcss-sprites')()
             ]
+          }
+        },
+        {
+          loader: 'sass-loader',
+          options: {
+            implementation: require('sass'),
+            sassOptions: {
+              fiber: require('fibers'),
+            },
           }
         }
         ]
