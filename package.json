@@ -51,6 +51,6 @@
     "webpack-spritesmith": "^1.0.2"
   },
   "dependencies": {
-    "jquery": "^3.4.1"
+    "jquery": "^3.5.0"
   }
 }
